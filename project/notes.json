@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "label-input"
+    },
+    {
+      "id": 1,
+      "name": "label-input-input"
+    },
+    {
+      "id": 2,
+      "name": "label-input-label"
+    },
+    {
+      "id": 3,
+      "name": "query-btn"
+    },
+    {
+      "id": 4,
+      "name": "reset-btn"
+    },
+    {
+      "id": 5,
+      "name": "table"
+    }
+  ],
+  "info": {
+    "year": 2026,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}

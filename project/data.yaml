@@ -1,0 +1,11 @@
+path: D:/code/python/ai-frontend/project  # 数据集根目录
+train: images  # 训练集图片目录（如果不分 train/val，直接写 images）
+val: images    # 验证集图片目录（如果不分 train/val，直接写 images）
+nc: 6          # 类别数量，根据 classes.txt 行数修改
+names:
+  0: label-input    # 对应 classes.txt 第1行
+  1: label-input-input    # 对应 classes.txt 第2行
+  2: label-input-label    # 对应 classes.txt 第3行
+  3: query-btn    # 对应 classes.txt 第4行
+  4: reset-btn    # 对应 classes.txt 第5行
+  5: table    # 对应 classes.txt 第6行
