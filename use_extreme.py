@@ -9,6 +9,10 @@ model = YOLO('runs/detect/new_model6/weights/best.pt')
 results = model('1.png')
 result = results[0]
 
+# 过滤置信度>=0.85的检测框
+mask = result.boxes.conf >= 0.85
+result.boxes = result.boxes[mask]
+
 # 生成并保存标注图片
 annotated_img = result.plot()
 cv2.imwrite('extreme_test_result6.png', annotated_img)
@@ -25,7 +29,8 @@ if len(result.boxes) > 0:
         cls_name = model.names[cls_id]
         confidence = float(box.conf[0])
         xyxy = box.xyxy[0].cpu().numpy()  # 像素坐标：x1,y1,x2,y2
-        print(f"✅ 检测到：{cls_name}（置信度：{confidence:.2f}），坐标：{xyxy}")
+        if confidence >= 0.85:
+            print(f"✅ 检测到：{cls_name}（置信度：{confidence:.2f}），坐标：{xyxy}")
     print("\n🎉 测试成功！模型已识别到目标，说明标注/配置无问题！")
 else:
     print("\n❌ 仍未检测到目标，大概率是标注/配置错误：")
